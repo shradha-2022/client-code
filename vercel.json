@@ -6,8 +6,7 @@
       "config": { "distDir": "code-compiler-frontend/dist" }
     },
     {
-      "src": "code-compiler-backend/Dockerfile",
-      "use": "@vercel/docker"
+      "src": "code-compiler-backend/Dockerfile"
     }
   ],
   "routes": [
