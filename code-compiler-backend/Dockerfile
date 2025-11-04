@@ -6,11 +6,7 @@ RUN yum install java-1.8.0-openjdk-devel -y
 # Copy requirements.txt
 COPY requirements.txt ${LAMBDA_TASK_ROOT}
 
-# Copy requirements.txt
-COPY requirements.txt ${LAMBDA_TASK_ROOT}
-
 # Install the specified packages
 RUN pip install -r requirements.txt
 
 CMD ["lambda_function.hander"]
-
