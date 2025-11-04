@@ -1,0 +1,23 @@
+{
+  "builds": [
+    {
+      "src": "code-compiler-frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "code-compiler-frontend/dist" }
+    },
+    {
+      "src": "code-compiler-backend/Dockerfile",
+      "use": "@vercel/docker"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/code-compiler-backend/api/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/code-compiler-frontend/$1"
+    }
+  ]
+}
