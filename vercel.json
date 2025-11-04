@@ -1,9 +1,9 @@
 {
   "builds": [
     {
-      "src": "code-compiler-frontend/package.json",
+      "src": "compiler-app/package.json",
       "use": "@vercel/static-build",
-      "config": { "distDir": "code-compiler-frontend/dist" }
+      "config": { "distDir": "compiler-app/build" }
     },
     {
       "src": "code-compiler-backend/app.py",
@@ -17,7 +17,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "/code-compiler-frontend/$1"
+      "dest": "compiler-app/build/$1"
     }
   ]
 }
