@@ -6,13 +6,14 @@
       "config": { "distDir": "code-compiler-frontend/dist" }
     },
     {
-      "src": "code-compiler-backend/Dockerfile"
+      "src": "code-compiler-backend/app.py",
+      "use": "@vercel/python"
     }
   ],
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/code-compiler-backend/api/$1"
+      "dest": "code-compiler-backend/app.py"
     },
     {
       "src": "/(.*)",
